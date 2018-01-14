@@ -1,9 +1,14 @@
+@font-face {
+    font-family: pixelFont;
+    src: url(LLPIXEL3.ttf);
+}
+
 body {
     text-align: center;
 }
 
 h1 {
-    font-family: Monoton;
+    font-family: pixelFont;
     font-size: 70px;
     margin: 0.2em;
 }
