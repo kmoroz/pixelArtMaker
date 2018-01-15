@@ -23,6 +23,7 @@ var width = document.getElementById("input_width").value;
 
 };
 
+
 $("#pixel_canvas").click(function(event) {
 	color(event);
 });
@@ -33,24 +34,26 @@ function resetGrid(){
 
 // Drawing and Erasing
 function color(event){
-	var color = document.getElementById('colorPicker').value;
-	event.target.style.backgroundColor = color;
+	var selectedColor = document.getElementById('colorPicker').value;
+	if(rgb2hex(event.target.style.backgroundColor) == selectedColor)
+	{
+		event.target.style.backgroundColor = 'white';
+	}
+	else
+	{	
+		event.target.style.backgroundColor = selectedColor;
+	}
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Function to convert hex format to a rgb color
+function rgb2hex(rgb){
+ rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+ return (rgb && rgb.length === 4) ? "#" +
+  ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+  ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+  ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
+}
 
 
 
