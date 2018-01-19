@@ -6,8 +6,12 @@
     <link rel="stylesheet" href="styles.css">
     <script src="jquery.js"></script>
 </head>
-<body>
-    <header><h1>Pixel Art Maker</h1></header>
+<body class="about_me_background">
+    <header>
+        <h1>Pixel Art Maker</h1>
+        <h3>Malevich Edition</h3> 
+    </header>
+
 
     <nav>
         <a class="nav-item" href="index.html">Pixel Art Maker</a> |
@@ -15,14 +19,32 @@
         <a class="nav-item" href="about me.html">About me</a> 
     </nav>
 
-    <video width="480" height="360" controls>
+    <video id="infoVideo" width="480" height="360" controls>
         <source src="Kazimir Malevich.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-
+    <p  id="toggleVideoButton" style="cursor: pointer; color: lightblue;" onclick="toggleVideo()" >click here to hide video</p>
     <footer>© Ksenia Morozova 2018</footer>
 
     <script src="designs.js"></script>
+    <script>
+        var video = 1;
+        function toggleVideo(){
+            
+            if(video == 0){
+                 $('#infoVideo').slideDown();
+                 video = 1;
+                 $('#toggleVideoButton').text('click here to hide video');
+            }else{
+                $('#infoVideo').fadeOut();
+                video = 0;
+                 $('#toggleVideoButton').text('click here to show video');
+            }
+    
+        
+        }
+
+    </script>
 </body>
 </html>
 

@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="styles.css">
     <script src="jquery.js"></script>
 </head>
-<body>
-    <header><h1>Pixel Art Maker</h1></header>
-
+<body class="about_me_background">
+    <header>
+        <h1>Pixel Art Maker</h1>
+        <h3>Malevich Edition</h3> 
+    </header>
     <nav>
         <a class="nav-item" href="index.html">Pixel Art Maker</a> |
         <a class="nav-item" href="malevich.html">Malevich</a> |
@@ -17,11 +19,11 @@
     <div id="section-wrapper">
         <section>
             <div id="image-container">
-                <img style="width: 100%;" src="me.jpg" alt="me"/>
+                <img id="bio-pic" style="width: 100%;" src="me.jpg" alt="me"/>
             </div>
             
             <div id="bio-container">
-                <p style="margin: 0px;">Hi! Thanks for stopping by. My name is Ksenia Morozova. I'm originally from Russia but right now I live, work and study in Ireland. I love to program and to build this site I used the following technologies:</p>
+                <p style="margin: 0px;">Hi! Thanks for stopping by. My name is Ksenia Morozova. I'm originally from Russia but right now I live, work and study in Ireland. I love to program as much as I love Russian modern art and to build this site I used the following technologies:</p>
                 <ul>
                     <li>HTML5</li>
                     <li>CSS3</li>
@@ -36,6 +38,20 @@
     <footer>© Ksenia Morozova 2018</footer>
 
     <script src="designs.js"></script>
+    <script>
+        
+            $( "#bio-pic" ).click(function() {
+              $( "#bio-pic" ).animate({
+                opacity: 0.25,
+              }, 1000, function() {
+              });
+                $( "#bio-pic" ).animate({
+                opacity: 1,
+              }, 1000, function() {
+              });
+            });
+
+    </script>
 </body>
 </html>
 
